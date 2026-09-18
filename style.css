@@ -231,3 +231,87 @@ body {
     .botoes { flex-direction: column; }
     .botao-principal, .botao-secundario { text-align: center; }
 }
+
+footer {
+    background-color: #080808;
+
+    border-top: 1px solid #222;
+
+    padding-top: 50px;
+}
+
+.footer-conteudo {
+    text-align: center;
+
+    padding: 0 8% 40px;
+}
+
+.footer-logo {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: #ff3b9d;
+}
+
+.footer-descricao {
+    color: #aaaaaa;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.footer-links a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff3b9d;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222;
+
+    padding: 20px 8%;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #666666;
+
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
