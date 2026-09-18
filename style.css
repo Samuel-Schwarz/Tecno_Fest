@@ -232,3 +232,565 @@ body {
     .botoes { flex-direction: column; }
     .botao-principal, .botao-secundario { text-align: center; }
 }
+
+/* ============================= */
+/* MAIN - ESTÉTICA NEON GAMER */
+/* ============================= */
+
+main {
+    background: #080808;
+    overflow: hidden;
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero {
+    min-height: 550px;
+    padding: 100px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #ff3b9d30,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            #ffb38a20,
+            transparent 35%
+        ),
+        #080808;
+}
+
+/* Brilho decorativo */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    width: 350px;
+    height: 350px;
+
+    right: -100px;
+    top: 50px;
+
+    border: 2px solid #ff3b9d30;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 40px #ff3b9d20,
+        inset 0 0 40px #ff3b9d10;
+
+    animation: girar 20s linear infinite;
+
+    z-index: -1;
+}
+
+/* Linha neon inferior */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff3b9d,
+        #ffb38a,
+        transparent
+    );
+
+    box-shadow: 0 0 15px #ff3b9d;
+
+    animation: pulsar 3s ease-in-out infinite;
+}
+
+.hero h2 {
+    font-size: clamp(42px, 7vw, 80px);
+
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    color: #ff3b9d;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 5px #ff3b9d,
+        0 0 15px #ff3b9d,
+        0 0 35px #ff3b9d;
+
+    animation: aparecer 1s ease forwards,
+               brilho 3s ease-in-out infinite;
+
+    position: relative;
+}
+
+/* Efeito de linha no título */
+
+.hero h2::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 3px;
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ff3b9d,
+        #ffb38a,
+        transparent
+    );
+
+    box-shadow: 0 0 12px #ff3b9d;
+}
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 20px;
+    line-height: 1.8;
+
+    color: #f0dce7;
+
+    margin-bottom: 35px;
+
+    animation: aparecer 1s ease 0.3s backwards;
+}
+
+/* ============================= */
+/* BOTÃO */
+/* ============================= */
+
+.botao {
+    display: inline-block;
+
+    background: transparent;
+
+    color: #ffb38a;
+
+    padding: 15px 32px;
+
+    border: 2px solid #ff3b9d;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 10px #ff3b9d50,
+        inset 0 0 10px #ff3b9d10;
+
+    transition: 0.3s;
+
+    animation: aparecer 1s ease 0.6s backwards;
+}
+
+.botao:hover {
+    background: #ff3b9d;
+
+    color: #080808;
+
+    box-shadow:
+        0 0 10px #ff3b9d,
+        0 0 30px #ff3b9d,
+        0 0 60px #ff3b9d70;
+
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* ============================= */
+/* CONTEÚDO */
+/* ============================= */
+
+.conteudo {
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080808,
+            #10080d,
+            #080808
+        );
+
+    position: relative;
+}
+
+.conteudo h2 {
+    font-size: clamp(28px, 5vw, 42px);
+
+    color: #ffb38a;
+
+    margin-bottom: 50px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px #ffb38a90,
+        0 0 25px #ff3b9d30;
+
+    position: relative;
+}
+
+/* Linha decorativa do título */
+
+.conteudo h2::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 3px;
+
+    margin: 15px auto 0;
+
+    background: #ff3b9d;
+
+    box-shadow:
+        0 0 10px #ff3b9d,
+        0 0 25px #ff3b9d80;
+}
+
+/* ============================= */
+/* CARDS */
+/* ============================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+/* Card individual */
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            #171017,
+            #0c0c0c
+        );
+
+    padding: 35px 30px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ff3b9d35;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: subir 0.8s ease backwards;
+}
+
+/* Linha neon no topo */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #ff3b9d,
+        #ffb38a
+    );
+
+    box-shadow: 0 0 15px #ff3b9d;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+/* Brilho interno */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -80px;
+    right: -80px;
+
+    background: #ff3b9d20;
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+
+    border-color: #ff3b9d;
+
+    box-shadow:
+        0 0 10px #ff3b9d40,
+        0 0 30px #ff3b9d20,
+        inset 0 0 20px #ff3b9d08;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card:hover::after {
+    background: #ff3b9d40;
+}
+
+.card h3 {
+    color: #ff3b9d;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 8px #ff3b9d70;
+
+    transition: 0.3s;
+}
+
+.card:hover h3 {
+    color: #ffb38a;
+
+    text-shadow:
+        0 0 10px #ffb38a90;
+}
+
+.card p {
+    color: #d6c5ce;
+
+    line-height: 1.8;
+}
+
+/* ============================= */
+/* INFORMAÇÕES DO EVENTO */
+/* ============================= */
+
+.info {
+    margin-top: 70px;
+
+    padding: 45px 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a0d16,
+            #100b0b
+        );
+
+    border: 1px solid #ff3b9d50;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 20px #ff3b9d10,
+        inset 0 0 30px #ff3b9d05;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Borda animada */
+
+.info::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff3b9d,
+        #ffb38a,
+        transparent
+    );
+
+    animation: varrer 4s linear infinite;
+}
+
+.info h2 {
+    color: #ff3b9d;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 10px #ff3b9d70;
+}
+
+.info p {
+    font-size: 18px;
+
+    color: #e6d3dc;
+
+    margin: 12px 0;
+}
+
+.info strong {
+    color: #ffb38a;
+
+    text-shadow:
+        0 0 5px #ffb38a50;
+}
+
+/* ============================= */
+/* ANIMAÇÕES */
+/* ============================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes brilho {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #ff3b9d,
+            0 0 15px #ff3b9d,
+            0 0 35px #ff3b9d;
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #ff3b9d,
+            0 0 25px #ff3b9d,
+            0 0 55px #ff3b9d;
+    }
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes varrer {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 500px;
+
+        padding: 80px 8%;
+    }
+
+    .hero h2 {
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 30px 25px;
+    }
+
+    .info {
+        padding: 35px 20px;
+    }
+
+}
